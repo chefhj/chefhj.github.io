@@ -16,7 +16,7 @@
             navigator.geolocation.getCurrentPosition((position) => {
             document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
         });
-            document.querySelector('a-scene').setAttribute('arjs', `sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: ${window.innerWidth}; displayHeight: ${window.innerHeight}; debugUIEnabled: false;`)
+            document.querySelector('a-scene').setAttribute('arjs', `sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: ${window.innerWidth}; displayHeight: ${window.innerHeight}; debugUIEnabled: true;`)
         }
     </script>
 </head>
