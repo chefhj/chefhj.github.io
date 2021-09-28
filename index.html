@@ -14,7 +14,7 @@
     <script>
         window.onload = () => {
             navigator.geolocation.getCurrentPosition((position) => {
-            document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+            document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude + .0005}; longitude: ${position.coords.longitude};`)
         });
             document.querySelector('a-scene').setAttribute('arjs', `sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: ${window.innerWidth}; displayHeight: ${window.innerHeight}; debugUIEnabled: true;`)
         }
@@ -23,7 +23,7 @@
 
 <body style='margin: 0; overflow: hidden;'>
 <a-scene vr-mode-ui="enabled: false" embedded>
-    <a-entity gltf-model="./assets/cadillac.gltf"  scale="0.15 0.15 0.15"  animation-mixer/>
+    <a-entity gltf-model="./assets/cadillac.gltf"  scale="0.05 0.05 0.05"  animation-mixer/>
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
 </body>
