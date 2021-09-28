@@ -11,6 +11,12 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
+    <script>
+        window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
+            document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+        });
+        }
+    </script>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
@@ -18,7 +24,7 @@
         vr-mode-ui="enabled: false"
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-entity gltf-model="./assets/cadillac.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: -97.6130972; latitude: 30.3974020;" animation-mixer/>
+    <a-entity gltf-model="./assets/cadillac.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"  animation-mixer/>
     <a-camera gps-camera rotation-reader></a-camera>
 </a-scene>
 </body>
